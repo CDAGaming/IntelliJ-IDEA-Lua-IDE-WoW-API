@@ -168,8 +168,9 @@ end
 
 --- Returns how many digsites are in a zone like Azsuna or Elwynn Forest.
 --- [https://wowpedia.fandom.com/wiki/API_ArchaeologyMapUpdateAll]
+--- @param uiMapID number @ UiMapID
 --- @return number @ numSites
-function ArchaeologyMapUpdateAll()
+function ArchaeologyMapUpdateAll(uiMapID)
 end
 
 --- [https://wowpedia.fandom.com/wiki/API_ArcheologyGetVisibleBlobID?action=edit&amp;redlink=1]
@@ -2554,10 +2555,10 @@ end
 function GetActionCooldown(slot)
 end
 
---- Gets the available count for an action, if applicable.
+--- Counts the available uses of certain kinds of actions.
 --- [https://wowpedia.fandom.com/wiki/API_GetActionCount]
---- @param actionSlot unknown
---- @return unknown @ text
+--- @param actionSlot number @ An action slot ID.
+--- @return number @ text
 function GetActionCount(actionSlot)
 end
 
@@ -2932,8 +2933,8 @@ end
 
 --- Get the status of the arena, battleground, or wargame that the player is either queued for or inside.
 --- [https://wowpedia.fandom.com/wiki/API_GetBattlefieldStatus]
---- @param index number @ Index of the battlefield you wish to view, in the range of 1 to GetMaxBattlefieldID()
---- @return string, string, number, number, unknown, string, string, string, unknown, string, string @ status, mapName, teamSize, registeredMatch, suspendedQueue, queueType, gameType, role, asGroup, shortDescription, longDescription
+--- @param index unknown
+--- @return unknown, unknown, number, number, unknown, unknown, unknown, unknown, unknown, unknown, unknown @ status, mapName, teamSize, registeredMatch, suspendedQueue, queueType, gameType, role, asGroup, shortDescription, longDescription
 function GetBattlefieldStatus(index)
 end
 
@@ -9134,7 +9135,8 @@ end
 function IsTitleKnown(titleId)
 end
 
---- [https://wowpedia.fandom.com/wiki/API_IsTrackedAchievement?action=edit&amp;redlink=1]
+--- Returns if an achievement is currently being tracked.
+--- [https://wowpedia.fandom.com/wiki/API_IsTrackedAchievement]
 --- @return void
 function IsTrackedAchievement()
 end
