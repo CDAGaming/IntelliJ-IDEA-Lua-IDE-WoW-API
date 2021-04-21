@@ -2802,7 +2802,7 @@ end
 --- Returns information about the type of an available quest.
 --- [https://wowpedia.fandom.com/wiki/API_GetAvailableQuestInfo]
 --- @param index number @ Index of the available quest to query, starting from 1.
---- @return boolean, number, boolean, boolean @ isTrivial, frequency, isRepeatable, isLegendary
+--- @return boolean, number, boolean, boolean, number @ isTrivial, frequency, isRepeatable, isLegendary, questID
 function GetAvailableQuestInfo(index)
 end
 
@@ -2933,8 +2933,8 @@ end
 
 --- Get the status of the arena, battleground, or wargame that the player is either queued for or inside.
 --- [https://wowpedia.fandom.com/wiki/API_GetBattlefieldStatus]
---- @param index unknown
---- @return unknown, unknown, number, number, unknown, unknown, unknown, unknown, unknown, unknown, unknown @ status, mapName, teamSize, registeredMatch, suspendedQueue, queueType, gameType, role, asGroup, shortDescription, longDescription
+--- @param index number @ Index of the battlefield you wish to view, in the range of 1 to GetMaxBattlefieldID()
+--- @return string, string, number, number, unknown, string, string, string, unknown, string, string @ status, mapName, teamSize, registeredMatch, suspendedQueue, queueType, gameType, role, asGroup, shortDescription, longDescription
 function GetBattlefieldStatus(index)
 end
 
@@ -4119,11 +4119,9 @@ end
 function GetHomePartyInfo(homePlayers)
 end
 
---- Returns information about a message in the mailbox.
 --- [https://wowpedia.fandom.com/wiki/API_GetInboxHeaderInfo]
---- @param index number @ the index of the message (ascending from 1).
---- @return number, number, number @ textCreated, canReply, isGM
-function GetInboxHeaderInfo(index)
+--- @return void
+function GetInboxHeaderInfo()
 end
 
 --- Returns information about an auction house invoice.
@@ -4338,13 +4336,14 @@ end
 function GetItemCooldown(itemID)
 end
 
---- Returns count information for the item.
+--- Counts an item.
 --- [https://wowpedia.fandom.com/wiki/API_GetItemCount]
---- @param itemID_or_itemName_or_itemLink unknown
---- @param includeBank boolean @ true: count includes bank items
---- @param includeCharges boolean @ true: count is charges if any, otherwise number of items
+--- @param itemInfo string @ ItemLink, Name or ID
+--- @param includeBank boolean @ ?Optional.  Could be nil. - If true, includes the bank
+--- @param includeUses boolean @ ?Optional.  Could be nil. - If true, includes each charge of an item similar to GetActionCount()
+--- @param includeReagentBank boolean @ ?Optional.  Could be nil. - If true, includes the reagent bank
 --- @return number @ count
-function GetItemCount(itemID_or_itemName_or_itemLink, includeBank, includeCharges)
+function GetItemCount(itemInfo, includeBank, includeUses, includeReagentBank)
 end
 
 --- [https://wowpedia.fandom.com/wiki/API_GetItemCreationContext?action=edit&amp;redlink=1]
@@ -8685,7 +8684,7 @@ end
 
 --- Returns whether the item is in usable range of the unit.
 --- [https://wowpedia.fandom.com/wiki/API_IsItemInRange]
---- @param item string @ ItemLink, ID or Name - If using an item name, requires the item to be in your inventory. Item IDs and links don't have this requirement.
+--- @param item string @ ItemLink, Name or ID - If using an item name, requires the item to be in your inventory. Item IDs and links don't have this requirement.
 --- @param unit string @ ? : UnitId - Defaults to target
 --- @return boolean @ inRange
 function IsItemInRange(item, unit)
@@ -10148,7 +10147,7 @@ end
 --- Play one of a set of built-in sounds.  Other players will not hear the sound.
 --- [https://wowpedia.fandom.com/wiki/API_PlaySound]
 --- @param soundKitID number @ All sounds used by Blizzard's UI are defined in the SOUNDKIT table.
---- @param channel string @ ?Optional.  Could be nil. - The sound volume slider setting the sound should use, one of: Master, SFX, Music, Ambience, Dialog. Individual channels (except Master) have user-configurable volume settings and may be muted, preventing playback. Defaults to SFX if not specified.
+--- @param channel string @ ?Optional.  Could be nil. - The sound volume slider setting the sound should use, one of: Master, SFX, Music, Ambience, Dialog. Individual channels (except Master) have user-configurable volume settings and may be muted, preventing playback. Defaults to SFX if not specified. There is also a Talking Head channel.[1]
 --- @param forceNoDuplicates unknown
 --- @param runFinishCallback boolean @ ?Optional.  Could be nil. - Fires SOUNDKIT_FINISHED when sound is done, arg1 will be soundHandle given below. Defaults to false.
 --- @return boolean, number @ willPlay, soundHandle
