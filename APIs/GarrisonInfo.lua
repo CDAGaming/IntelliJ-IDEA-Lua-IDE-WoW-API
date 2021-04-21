@@ -25,6 +25,12 @@ function C_Garrison.GetAutoMissionEnvironmentEffect(missionID) end
 ---@return AutoMissionTargetingInfo targetInfo
 function C_Garrison.GetAutoMissionTargetingInfo(missionID, followerID, casterBoardIndex) end
 
+---@param missionID number 
+---@param autoCombatSpellID number 
+---@param casterBoardIndex number 
+---@return AutoMissionTargetingInfo targetInfo
+function C_Garrison.GetAutoMissionTargetingInfoForSpell(missionID, autoCombatSpellID, casterBoardIndex) end
+
 ---@param followerType number 
 ---@return AutoCombatTroopInfo autoTroopInfo
 function C_Garrison.GetAutoTroops(followerType) end
@@ -347,6 +353,7 @@ local MissionDeploymentInfo = {}
 
 ---@class MissionEncounterIconInfo
 ---@field portraitFileDataID number 
+---@field missionScalar number 
 ---@field isElite bool 
 ---@field isRare bool 
 local MissionEncounterIconInfo = {}

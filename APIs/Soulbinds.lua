@@ -90,7 +90,7 @@ function C_Soulbinds.GetConduitQuality(conduitID, rank) end
 
 ---@param conduitID number 
 ---@return number conduitRank
-function C_Soulbinds.GetConduitRankFromCollection(conduitID) end
+function C_Soulbinds.GetConduitRank(conduitID) end
 
 ---@param conduitID number 
 ---@param conduitRank number 

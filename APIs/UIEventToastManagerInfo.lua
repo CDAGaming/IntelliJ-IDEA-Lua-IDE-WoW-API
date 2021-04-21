@@ -20,6 +20,7 @@ EventToastDisplayType.LargeTextWithIcon = 4
 EventToastDisplayType.NormalTextWithIconAndRarity = 5
 EventToastDisplayType.Scenario = 6
 EventToastDisplayType.ChallengeMode = 7
+EventToastDisplayType.ScenarioClickExpand = 8
 
 ---@class EventToastEventType
 local EventToastEventType = {}
@@ -59,5 +60,6 @@ EventToastEventType.SpellScript = 18
 ---@field sortOrder number 
 ---@field time number|nil 
 ---@field uiWidgetSetID number|nil 
+---@field extraUiWidgetSetID number|nil 
 local EventToastInfo = {}
 

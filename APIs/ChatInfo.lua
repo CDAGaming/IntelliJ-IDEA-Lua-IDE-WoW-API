@@ -22,6 +22,10 @@ function C_ChatInfo.GetChannelShortcut(channelIndex) end
 ---@return string shortcut
 function C_ChatInfo.GetChannelShortcutForChannelID(channelID) end
 
+---@param typeID number 
+---@return string|nil name
+function C_ChatInfo.GetChatTypeName(typeID) end
+
 ---@param clubID string 
 ---@return string ids
 function C_ChatInfo.GetClubStreamIDs(clubID) end
