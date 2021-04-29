@@ -2755,13 +2755,14 @@ end
 
 --- Returns possible player names matching a given prefix string and specified requirements.
 --- [https://wowpedia.fandom.com/wiki/API_GetAutoCompleteResults]
---- @param text string @ first characters of the possible names to be autocompleted
---- @param include number @ bit mask of filters that the results must match at least one of.
---- @param exclude number @ bit mask of filters that the results must not match any of.
---- @param maxResults number @ number of results desired.
---- @param cursorPosition number @ position of the cursor within the editbox (i.e. how much of the text string should be matching).
---- @return unknown, unknown, unknown @ nick1, nick2, ...
-function GetAutoCompleteResults(text, include, exclude, maxResults, cursorPosition)
+--- @param text string @ First characters of the possible names to be autocompleted
+--- @param numResults number @ Number of results desired.
+--- @param cursorPosition number @ Position of the cursor within the editbox (i.e. how much of the text string should be matching).
+--- @param allowFullMatch boolean
+--- @param includeBitField number @ Bit mask of filters that the results must match at least one of.
+--- @param excludeBitField number @ Bit mask of filters that the results must not match any of.
+--- @return unknown @ results
+function GetAutoCompleteResults(text, numResults, cursorPosition, allowFullMatch, includeBitField, excludeBitField)
 end
 
 --- Returns whether guild invitations are being automatically declined.
@@ -2880,7 +2881,7 @@ end
 function GetBattlefieldArenaFaction()
 end
 
---- Get estimated wait time for a Battlefield's availability
+--- Get estimated wait for entry into the battlefield.
 --- [https://wowpedia.fandom.com/wiki/API_GetBattlefieldEstimatedWaitTime]
 --- @return number @ waitTime
 function GetBattlefieldEstimatedWaitTime()
@@ -4119,9 +4120,11 @@ end
 function GetHomePartyInfo(homePlayers)
 end
 
+--- Returns information about a message in the mailbox.
 --- [https://wowpedia.fandom.com/wiki/API_GetInboxHeaderInfo]
---- @return void
-function GetInboxHeaderInfo()
+--- @param index number @ the index of the message (ascending from 1).
+--- @return number, number, number @ textCreated, canReply, isGM
+function GetInboxHeaderInfo(index)
 end
 
 --- Returns information about an auction house invoice.
@@ -5821,9 +5824,8 @@ end
 function GetPOITextureCoords()
 end
 
---- Checks to see if the player has enabled PvP (Permaflagged).
 --- [https://wowpedia.fandom.com/wiki/API_GetPVPDesired]
---- @return unknown @ ispvp
+--- @return void
 function GetPVPDesired()
 end
 
@@ -6436,7 +6438,7 @@ end
 
 --- Gets information about a raid member.
 --- [https://wowpedia.fandom.com/wiki/API_GetRaidRosterInfo]
---- @param raidIndex number @ Index of raid member between 1 and MAX_RAID_MEMBERS (40). If you specify an index that is out of bounds, the function returns nil.
+--- @param raidIndex number @ Index of raid member between 1 and MAX_RAID_MEMBERS (40). If you specify an index that is out of bounds, some return values change to nil (see details).
 --- @return string, boolean, boolean, string, boolean, string @ zone, online, isDead, role, isML, combatRole
 function GetRaidRosterInfo(raidIndex)
 end
@@ -11563,10 +11565,11 @@ end
 function SetPOIIconOverlapPushDistance()
 end
 
---- Used to toggle PVP on or Off.
+--- Controls PvP combat flagging.
 --- [https://wowpedia.fandom.com/wiki/API_SetPVP]
+--- @param flag boolean @ True for players flagged for PvP, false otherwise.
 --- @return void
-function SetPVP()
+function SetPVP(flag)
 end
 
 --- Sets which roles the player is willing to perform in PvP battlegrounds.
@@ -12470,7 +12473,6 @@ end
 function ToggleDebugAIDisplay()
 end
 
---- Toggles PvP setting on or off.
 --- [https://wowpedia.fandom.com/wiki/API_TogglePVP]
 --- @return void
 function TogglePVP()
