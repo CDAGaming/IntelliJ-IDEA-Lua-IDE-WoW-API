@@ -19,14 +19,22 @@ function C_ChallengeMode.GetActiveKeystoneInfo() end
 ---@return string, string, number name, description, filedataid
 function C_ChallengeMode.GetAffixInfo(affixID) end
 
----@return number, number, number, boolean, number, boolean mapChallengeModeID, level, time, onTime, keystoneUpgradeLevels, practiceRun
+---@return number, number, number, boolean, number, boolean, number, number mapChallengeModeID, level, time, onTime, keystoneUpgradeLevels, practiceRun, oldOverallDungeonScore, newOverallDungeonScore
 function C_ChallengeMode.GetCompletionInfo() end
 
 ---@return number, number numDeaths, timeLost
 function C_ChallengeMode.GetDeathCount() end
 
+---@param dungeonScore number 
+---@return table scoreColor
+function C_ChallengeMode.GetDungeonScoreRarityColor(dungeonScore) end
+
 ---@return ChallengeModeGuildTopAttempt topAttempt
 function C_ChallengeMode.GetGuildLeaders() end
+
+---@param level number 
+---@return table levelScore
+function C_ChallengeMode.GetKeystoneLevelRarityColor(level) end
 
 ---@return number mapChallengeModeIDs
 function C_ChallengeMode.GetMapTable() end
@@ -34,6 +42,9 @@ function C_ChallengeMode.GetMapTable() end
 ---@param mapChallengeModeID number 
 ---@return string, number, number, number|nil, number name, id, timeLimit, texture, backgroundTexture
 function C_ChallengeMode.GetMapUIInfo(mapChallengeModeID) end
+
+---@return number overallDungeonScore
+function C_ChallengeMode.GetOverallDungeonScore() end
 
 ---@param powerLevel number 
 ---@return number, number damageMod, healthMod

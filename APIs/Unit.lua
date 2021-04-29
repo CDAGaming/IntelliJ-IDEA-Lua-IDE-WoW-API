@@ -2,6 +2,10 @@
 function GetNegativeCorruptionEffectInfo() end
 
 ---@param unit string 
+---@return number dungeonScore
+function GetPlayerUnitDungeonScore(unit) end
+
+---@param unit string 
 ---@return number pointIndices
 function GetUnitChargedPowerPoints(unit) end
 

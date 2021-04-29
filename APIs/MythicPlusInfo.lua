@@ -30,6 +30,10 @@ function C_MythicPlus.GetRewardLevelFromKeystoneLevel(keystoneLevel) end
 function C_MythicPlus.GetRunHistory(includePreviousWeeks, includeIncompleteRuns) end
 
 ---@param mapChallengeModeID number 
+---@return MythicPlusAffixScoreInfo, number affixScores, bestOverAllScore
+function C_MythicPlus.GetSeasonBestAffixScoreInfoForMap(mapChallengeModeID) end
+
+---@param mapChallengeModeID number 
 ---@return MapSeasonBestInfo|nil, MapSeasonBestInfo|nil intimeInfo, overtimeInfo
 function C_MythicPlus.GetSeasonBestForMap(mapChallengeModeID) end
 
@@ -59,6 +63,11 @@ function C_MythicPlus.RequestRewards() end
 ---@field affixIDs table 
 ---@field members table 
 local MapSeasonBestInfo = {}
+
+---@class MythicPlusAffixScoreInfo
+---@field name string 
+---@field score number 
+local MythicPlusAffixScoreInfo = {}
 
 ---@class MythicPlusDate
 ---@field year number 

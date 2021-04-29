@@ -4,10 +4,15 @@ C_PlayerChoice = {}
 ---@return PlayerChoiceInfo choiceInfo
 function C_PlayerChoice.GetCurrentPlayerChoiceInfo() end
 
+---@return number numRerolls
+function C_PlayerChoice.GetNumRerolls() end
+
 ---@return boolean isWaitingForResponse
 function C_PlayerChoice.IsWaitingForPlayerChoiceResponse() end
 
 function C_PlayerChoice.OnUIClosed() end
+
+function C_PlayerChoice.RequestRerollPlayerChoice() end
 
 ---@param responseID number 
 function C_PlayerChoice.SendPlayerChoiceResponse(responseID) end

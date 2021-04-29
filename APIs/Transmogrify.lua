@@ -1,14 +1,35 @@
 ---@class Transmogrify
 C_Transmog = {}
 
+---@param currentSpecOnly boolean 
+---@return boolean requestSent
+function C_Transmog.ApplyAllPending(currentSpecOnly) end
+
 ---@param slotID number 
 ---@return boolean canHaveSecondaryAppearance
 function C_Transmog.CanHaveSecondaryAppearanceForSlotID(slotID) end
+
+---@param itemInfo string 
+---@return boolean, string|nil, boolean, string|nil canBeTransmogged, selfFailureReason, canTransmogOthers, othersFailureReason
+function C_Transmog.CanTransmogItem(itemInfo) end
+
+---@param targetItemInfo string 
+---@param sourceItemInfo string 
+---@return boolean, string|nil canTransmog, failureReason
+function C_Transmog.CanTransmogItemWithItem(targetItemInfo, sourceItemInfo) end
 
 function C_Transmog.ClearAllPending() end
 
 ---@param transmogLocation table 
 function C_Transmog.ClearPending(transmogLocation) end
+
+function C_Transmog.Close() end
+
+---@return number|nil cost
+function C_Transmog.GetApplyCost() end
+
+---@return TransmogApplyWarningInfo warnings
+function C_Transmog.GetApplyWarnings() end
 
 ---@param transmogID number 
 ---@return TransmogCollectionType categoryID
@@ -54,6 +75,9 @@ function C_Transmog.IsAtTransmogNPC() end
 ---@return boolean isBeingCollapsed
 function C_Transmog.IsSlotBeingCollapsed(transmogLocation) end
 
+---@param outfitID number 
+function C_Transmog.LoadOutfit(outfitID) end
+
 ---@param transmogLocation table 
 ---@param pendingInfo table 
 function C_Transmog.SetPending(transmogLocation, pendingInfo) end
@@ -87,4 +111,9 @@ TransmogSource.NotValidForTransmog = 9
 local TransmogType = {}
 TransmogType.Appearance = 0
 TransmogType.Illusion = 1
+
+---@class TransmogApplyWarningInfo
+---@field itemLink string 
+---@field text string 
+local TransmogApplyWarningInfo = {}
 

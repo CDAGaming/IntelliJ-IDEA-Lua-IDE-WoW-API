@@ -94,6 +94,7 @@ local LfgEntryData = {}
 ---@field isWarMode bool 
 ---@field age number 
 ---@field questID number|nil 
+---@field leaderOverallDungeonScore number|nil 
 local LfgSearchResultData = {}
 
 ---@class WowLocale

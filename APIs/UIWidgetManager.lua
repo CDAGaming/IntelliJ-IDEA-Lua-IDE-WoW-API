@@ -194,6 +194,12 @@ UIWidgetFontType.Normal = 0
 UIWidgetFontType.Shadow = 1
 UIWidgetFontType.Outline = 2
 
+---@class UIWidgetModelSceneLayer
+local UIWidgetModelSceneLayer = {}
+UIWidgetModelSceneLayer.None = 0
+UIWidgetModelSceneLayer.Front = 1
+UIWidgetModelSceneLayer.Back = 2
+
 ---@class UIWidgetTextSizeType
 local UIWidgetTextSizeType = {}
 UIWidgetTextSizeType.Small = 0
@@ -273,6 +279,8 @@ ZoneControlState.State2 = 1
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local BulletTextListWidgetVisualizationInfo = {}
 
 ---@class CaptureBarWidgetVisualizationInfo
@@ -295,6 +303,8 @@ local BulletTextListWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local CaptureBarWidgetVisualizationInfo = {}
 
 ---@class CaptureZoneVisualizationInfo
@@ -313,6 +323,8 @@ local CaptureBarWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local CaptureZoneVisualizationInfo = {}
 
 ---@class DiscreteProgressStepsVisualizationInfo
@@ -332,6 +344,8 @@ local CaptureZoneVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local DiscreteProgressStepsVisualizationInfo = {}
 
 ---@class DoubleIconAndTextWidgetVisualizationInfo
@@ -351,6 +365,8 @@ local DiscreteProgressStepsVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local DoubleIconAndTextWidgetVisualizationInfo = {}
 
 ---@class DoubleStateIconRowVisualizationInfo
@@ -367,6 +383,8 @@ local DoubleIconAndTextWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local DoubleStateIconRowVisualizationInfo = {}
 
 ---@class DoubleStatusBarWidgetVisualizationInfo
@@ -391,6 +409,8 @@ local DoubleStateIconRowVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local DoubleStatusBarWidgetVisualizationInfo = {}
 
 ---@class HorizontalCurrenciesWidgetVisualizationInfo
@@ -406,6 +426,8 @@ local DoubleStatusBarWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local HorizontalCurrenciesWidgetVisualizationInfo = {}
 
 ---@class IconAndTextWidgetVisualizationInfo
@@ -423,6 +445,8 @@ local HorizontalCurrenciesWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local IconAndTextWidgetVisualizationInfo = {}
 
 ---@class IconTextAndBackgroundWidgetVisualizationInfo
@@ -438,6 +462,8 @@ local IconAndTextWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local IconTextAndBackgroundWidgetVisualizationInfo = {}
 
 ---@class IconTextAndCurrenciesWidgetVisualizationInfo
@@ -458,6 +484,8 @@ local IconTextAndBackgroundWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local IconTextAndCurrenciesWidgetVisualizationInfo = {}
 
 ---@class ScenarioHeaderCurrenciesAndBackgroundWidgetVisualizationInfo
@@ -474,6 +502,8 @@ local IconTextAndCurrenciesWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local ScenarioHeaderCurrenciesAndBackgroundWidgetVisualizationInfo = {}
 
 ---@class ScenarioHeaderTimerWidgetVisualizationInfo
@@ -493,6 +523,8 @@ local ScenarioHeaderCurrenciesAndBackgroundWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local ScenarioHeaderTimerWidgetVisualizationInfo = {}
 
 ---@class SpellDisplayVisualizationInfo
@@ -509,6 +541,8 @@ local ScenarioHeaderTimerWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local SpellDisplayVisualizationInfo = {}
 
 ---@class StackedResourceTrackerWidgetVisualizationInfo
@@ -524,6 +558,8 @@ local SpellDisplayVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local StackedResourceTrackerWidgetVisualizationInfo = {}
 
 ---@class StatusBarWidgetVisualizationInfo
@@ -548,6 +584,8 @@ local StackedResourceTrackerWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local StatusBarWidgetVisualizationInfo = {}
 
 ---@class TextWithStateWidgetVisualizationInfo
@@ -568,6 +606,8 @@ local StatusBarWidgetVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local TextWithStateWidgetVisualizationInfo = {}
 
 ---@class TextureAndTextEntryInfo
@@ -589,6 +629,8 @@ local TextureAndTextEntryInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local TextureAndTextRowVisualizationInfo = {}
 
 ---@class TextureAndTextVisualizationInfo
@@ -605,6 +647,8 @@ local TextureAndTextRowVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local TextureAndTextVisualizationInfo = {}
 
 ---@class TextureWithAnimationVisualizationInfo
@@ -620,6 +664,8 @@ local TextureAndTextVisualizationInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local TextureWithAnimationVisualizationInfo = {}
 
 ---@class UIWidgetCurrencyInfo
@@ -674,6 +720,8 @@ local UIWidgetStateIconInfo = {}
 ---@field outAnimType WidgetAnimationType 
 ---@field widgetScale UIWidgetScale 
 ---@field layoutDirection UIWidgetLayoutDirection 
+---@field modelSceneLayer UIWidgetModelSceneLayer 
+---@field scriptedAnimationEffectID number 
 local ZoneControlVisualizationInfo = {}
 
 ---@class ZoneEntry
