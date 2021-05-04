@@ -12604,11 +12604,11 @@ end
 function UnitAttackSpeed(unit)
 end
 
---- Retrieve info about a certain buff on a certain unit.
+--- Retrieve info about an aura (a buff or debuff).
 --- [https://wowpedia.fandom.com/wiki/API_UnitAura]
---- @param unit string @ unitId) - unit whose auras to query.
---- @param index number @ or String - index
---- @param filter string @ optional) - list of filters, separated by spaces or pipes. HELPFUL by default. The following filters are available:
+--- @param unit string @ UnitId to query.
+--- @param index number @ Index incremented from 1 until no more results.
+--- @param filter string @ ?Optional.  Could be nil. - Optional, case-insensitive filters separated by spaces or pipes.
 --- @return void
 function UnitAura(unit, index, filter)
 end
@@ -12621,12 +12621,12 @@ end
 function UnitAuraBySlot(unit, slot)
 end
 
---- Needs summary.
+--- Returns an ordered list of auras used with UnitAuraBySlot()
 --- [https://wowpedia.fandom.com/wiki/API_UnitAuraSlots]
---- @param unit string
---- @param filter string @ e.g. HELPFUL, HARMFUL|RAID
---- @param maxSlots number
---- @param continuationToken number
+--- @param unit string @ UnitId to query.
+--- @param filter string @ Similar to UnitAura; however, either HELPFUL or HARMFUL is required.
+--- @param maxSlots number @ ?Optional.  Could be nil. - The maximum number of slots to return
+--- @param continuationToken number @ ?Optional.  Could be nil. - The number of slots to skip (see details).
 --- @return number, number @ continuationToken, ...
 function UnitAuraSlots(unit, filter, maxSlots, continuationToken)
 end
@@ -12648,13 +12648,9 @@ end
 function UnitBattlePetType()
 end
 
---- Retrieve info about a certain buff on a certain unit.
 --- [https://wowpedia.fandom.com/wiki/API_UnitBuff]
---- @param unit string @ unitId) - unit whose buffs to query.
---- @param index number @ or String - index
---- @param filter string @ optional) - list of filters, separated by spaces or pipes (|). HELPFUL by default. The following filters are available:
 --- @return void
-function UnitBuff(unit, index, filter)
+function UnitBuff()
 end
 
 --- Indicates whether the first unit can assist the second unit.
@@ -12752,7 +12748,6 @@ end
 function UnitDamage(unit)
 end
 
---- Retrieve info about a certain buff on a certain unit.
 --- [https://wowpedia.fandom.com/wiki/API_UnitDebuff]
 --- @return void
 function UnitDebuff()
