@@ -67,6 +67,9 @@ local MapSeasonBestInfo = {}
 ---@class MythicPlusAffixScoreInfo
 ---@field name string 
 ---@field score number 
+---@field level number 
+---@field durationSec number 
+---@field overTime bool 
 local MythicPlusAffixScoreInfo = {}
 
 ---@class MythicPlusDate

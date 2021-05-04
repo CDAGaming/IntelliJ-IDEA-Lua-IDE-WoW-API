@@ -1,9 +1,9 @@
 ---@class UIFrameManager
 C_FrameManager = {}
 
----@class UIFrameDataSource
-local UIFrameDataSource = {}
-UIFrameDataSource.WorldState = 0
+---@param frameType UIFrameType 
+---@return boolean shouldShow
+function C_FrameManager.GetFrameVisibilityState(frameType) end
 
 ---@class UIFrameType
 local UIFrameType = {}
