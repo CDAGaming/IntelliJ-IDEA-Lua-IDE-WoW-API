@@ -53,19 +53,12 @@ function C_VoiceChat.GetCurrentVoiceChatConnectionStatusCode() end
 ---@return number|nil volume
 function C_VoiceChat.GetInputVolume() end
 
----@param clubId string 
----@return VoiceChannelErrorReason|nil errorReason
-function C_VoiceChat.GetJoinClubVoiceChannelError(clubId) end
-
 ---@return VoiceChatMember|nil memberInfo
 function C_VoiceChat.GetLocalPlayerActiveChannelMemberInfo() end
 
 ---@param channelID number 
 ---@return number|nil memberID
 function C_VoiceChat.GetLocalPlayerMemberID(channelID) end
-
----@return number scale
-function C_VoiceChat.GetMasterVolumeScale() end
 
 ---@param memberID number 
 ---@param channelID number 
@@ -191,9 +184,6 @@ function C_VoiceChat.SetInputDevice(deviceID) end
 ---@param volume number 
 function C_VoiceChat.SetInputVolume(volume) end
 
----@param scale number 
-function C_VoiceChat.SetMasterVolumeScale(scale) end
-
 ---@param playerLocation table 
 ---@param muted boolean 
 function C_VoiceChat.SetMemberMuted(playerLocation, muted) end
@@ -239,11 +229,6 @@ local CommunicationMode = {}
 CommunicationMode.PushToTalk = 0
 CommunicationMode.OpenMic = 1
 
----@class VoiceChannelErrorReason
-local VoiceChannelErrorReason = {}
-VoiceChannelErrorReason.Unknown = 0
-VoiceChannelErrorReason.IsBattleNetChannel = 1
-
 ---@class VoiceChatStatusCode
 local VoiceChatStatusCode = {}
 VoiceChatStatusCode.Success = 0
@@ -269,8 +254,6 @@ VoiceChatStatusCode.UnsupportedChatChannelType = 19
 VoiceChatStatusCode.InvalidCommunityStream = 20
 VoiceChatStatusCode.PlayerSilenced = 21
 VoiceChatStatusCode.PlayerVoiceChatParentalDisabled = 22
-VoiceChatStatusCode.InvalidInputDevice = 23
-VoiceChatStatusCode.InvalidOutputDevice = 24
 
 ---@class VoiceAudioDevice
 ---@field deviceID string 
@@ -279,6 +262,15 @@ VoiceChatStatusCode.InvalidOutputDevice = 24
 ---@field isActive bool 
 ---@field isSystemDefault bool 
 local VoiceAudioDevice = {}
+
+---@class VoiceChatMember
+---@field energy number 
+---@field memberID number 
+---@field isActive bool 
+---@field isSpeaking bool 
+---@field isMutedForAll bool 
+---@field isSilenced bool 
+local VoiceChatMember = {}
 
 ---@class VoiceChatChannel
 ---@field name string 
@@ -293,15 +285,6 @@ local VoiceAudioDevice = {}
 ---@field isLocalProcess bool 
 ---@field members table 
 local VoiceChatChannel = {}
-
----@class VoiceChatMember
----@field energy number 
----@field memberID number 
----@field isActive bool 
----@field isSpeaking bool 
----@field isMutedForAll bool 
----@field isSilenced bool 
-local VoiceChatMember = {}
 
 ---@class VoiceChatProcess
 ---@field name string 

@@ -1,10 +1,6 @@
 ---@class AccountInfo
 C_AccountInfo = {}
 
----@param battleNetAccountGUID string 
----@return number battleNetAccountID
-function C_AccountInfo.GetIDFromBattleNetAccountGUID(battleNetAccountGUID) end
-
 ---@param guid string 
 ---@return boolean isBNet
 function C_AccountInfo.IsGUIDBattleNetAccountType(guid) end

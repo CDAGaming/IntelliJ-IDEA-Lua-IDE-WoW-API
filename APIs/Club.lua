@@ -129,16 +129,9 @@ function C_Club.GetAssignableRoles(clubId, memberId) end
 ---@return number|nil avatarIds
 function C_Club.GetAvatarIdList(clubType) end
 
----@return number capacity
-function C_Club.GetClubCapacity() end
-
 ---@param clubId string 
 ---@return ClubInfo|nil info
 function C_Club.GetClubInfo(clubId) end
-
----@param clubType ClubType 
----@return ClubLimits clubLimits
-function C_Club.GetClubLimits(clubType) end
 
 ---@param clubId string 
 ---@param streamId string @ [OPTIONAL]
@@ -158,9 +151,6 @@ function C_Club.GetClubStreamNotificationSettings(clubId) end
 ---@param result ValidateNameResult 
 ---@return string|nil errorCode
 function C_Club.GetCommunityNameResultText(result) end
-
----@return string|nil guildClubId
-function C_Club.GetGuildClubId() end
 
 ---@return ClubMessageInfo, string, string, ClubType messageInfo, clubId, streamId, clubType
 function C_Club.GetInfoFromLastCommunityChatLine() end
@@ -191,10 +181,6 @@ function C_Club.GetInvitationsForClub(clubId) end
 --- These are the clubs the active player has been invited to.
 ---@return ClubSelfInvitationInfo invitations
 function C_Club.GetInvitationsForSelf() end
-
----@param ticket string 
----@return ClubErrorType, ClubInfo|nil, boolean error, info, showError
-function C_Club.GetLastTicketResponse(ticket) end
 
 ---@param clubId string 
 ---@param memberId number 
@@ -320,10 +306,6 @@ function C_Club.RevokeInvitation(clubId, memberId) end
 ---@param memberId number 
 function C_Club.SendBattleTagFriendRequest(guildClubId, memberId) end
 
----@param clubId string 
----@param character string 
-function C_Club.SendCharacterInvitation(clubId, character) end
-
 --- Check the canSendInvitation privilege.
 ---@param clubId string 
 ---@param memberId number 
@@ -358,6 +340,9 @@ function C_Club.SetClubPresenceSubscription(clubId) end
 ---@param settings ClubStreamNotificationSetting 
 function C_Club.SetClubStreamNotificationSettings(clubId, settings) end
 
+---@param communityID number 
+function C_Club.SetCommunityID(communityID) end
+
 ---@param clubId string 
 ---@param isFavorite boolean 
 function C_Club.SetFavorite(clubId, isFavorite) end
@@ -379,6 +364,18 @@ function C_Club.UnfocusStream(clubId, streamId) end
 ---@param clubFieldType ClubFieldType 
 ---@return ValidateNameResult result
 function C_Club.ValidateText(clubType, text, clubFieldType) end
+
+---@class ClubRoleIdentifier
+local ClubRoleIdentifier = {}
+ClubRoleIdentifier.Owner = 1
+ClubRoleIdentifier.Leader = 2
+ClubRoleIdentifier.Moderator = 3
+ClubRoleIdentifier.Member = 4
+
+---@class ClubType
+local ClubType = {}
+ClubType.BattleNet = 0
+ClubType.Other = 1
 
 ---@class ClubActionType
 local ClubActionType = {}
@@ -463,12 +460,6 @@ ClubFieldType.ClubStreamName = 4
 ClubFieldType.ClubStreamSubject = 5
 ClubFieldType.NumTypes = 6
 
----@class ClubInvitationCandidateStatus
-local ClubInvitationCandidateStatus = {}
-ClubInvitationCandidateStatus.Available = 0
-ClubInvitationCandidateStatus.InvitePending = 1
-ClubInvitationCandidateStatus.AlreadyMember = 2
-
 ---@class ClubMemberPresence
 local ClubMemberPresence = {}
 ClubMemberPresence.Unknown = 0
@@ -477,6 +468,12 @@ ClubMemberPresence.OnlineMobile = 2
 ClubMemberPresence.Offline = 3
 ClubMemberPresence.Away = 4
 ClubMemberPresence.Busy = 5
+
+---@class ClubInvitationCandidateStatus
+local ClubInvitationCandidateStatus = {}
+ClubInvitationCandidateStatus.Available = 0
+ClubInvitationCandidateStatus.InvitePending = 1
+ClubInvitationCandidateStatus.AlreadyMember = 2
 
 ---@class ClubRemovedReason
 local ClubRemovedReason = {}
@@ -490,32 +487,16 @@ local ClubRestrictionReason = {}
 ClubRestrictionReason.None = 0
 ClubRestrictionReason.Unavailable = 1
 
----@class ClubRoleIdentifier
-local ClubRoleIdentifier = {}
-ClubRoleIdentifier.Owner = 1
-ClubRoleIdentifier.Leader = 2
-ClubRoleIdentifier.Moderator = 3
-ClubRoleIdentifier.Member = 4
+---@class ClubStreamType
+local ClubStreamType = {}
+ClubStreamType.General = 0
+ClubStreamType.Other = 1
 
 ---@class ClubStreamNotificationFilter
 local ClubStreamNotificationFilter = {}
 ClubStreamNotificationFilter.None = 0
 ClubStreamNotificationFilter.Mention = 1
 ClubStreamNotificationFilter.All = 2
-
----@class ClubStreamType
-local ClubStreamType = {}
-ClubStreamType.General = 0
-ClubStreamType.Guild = 1
-ClubStreamType.Officer = 2
-ClubStreamType.Other = 3
-
----@class ClubType
-local ClubType = {}
-ClubType.BattleNet = 0
-ClubType.Character = 1
-ClubType.Guild = 2
-ClubType.Other = 3
 
 ---@class ValidateNameResult
 local ValidateNameResult = {}
@@ -536,7 +517,6 @@ ValidateNameResult.NameConsecutiveSpaces = 13
 ValidateNameResult.NameRussianConsecutiveSilentCharacters = 14
 ValidateNameResult.NameRussianSilentCharacterAtBeginningOrEnd = 15
 ValidateNameResult.NameDeclensionDoesntMatchBaseName = 16
-ValidateNameResult.NameSpacesDisallowed = 17
 
 ---@class ClubInfo
 ---@field clubId string 
@@ -551,23 +531,6 @@ ValidateNameResult.NameSpacesDisallowed = 17
 ---@field joinTime number|nil 
 ---@field socialQueueingEnabled bool|nil 
 local ClubInfo = {}
-
----@class ClubInvitationCandidateInfo
----@field memberId number 
----@field name string 
----@field priority number 
----@field status ClubInvitationCandidateStatus 
-local ClubInvitationCandidateInfo = {}
-
----@class ClubInvitationInfo
----@field invitationId string 
----@field isMyInvitation bool 
----@field invitee ClubMemberInfo 
-local ClubInvitationInfo = {}
-
----@class ClubLimits
----@field maximumNumberOfStreams number 
-local ClubLimits = {}
 
 ---@class ClubMemberInfo
 ---@field isSelf bool 
@@ -600,10 +563,35 @@ local ClubLimits = {}
 ---@field isRemoteChat bool|nil 
 local ClubMemberInfo = {}
 
+---@class ClubSelfInvitationInfo
+---@field invitationId string 
+---@field club ClubInfo 
+---@field inviter ClubMemberInfo 
+---@field leaders table 
+local ClubSelfInvitationInfo = {}
+
+---@class ClubInvitationCandidateInfo
+---@field memberId number 
+---@field name string 
+---@field priority number 
+---@field status ClubInvitationCandidateStatus 
+local ClubInvitationCandidateInfo = {}
+
+---@class ClubInvitationInfo
+---@field invitationId string 
+---@field isMyInvitation bool 
+---@field invitee ClubMemberInfo 
+local ClubInvitationInfo = {}
+
 ---@class ClubMessageIdentifier
 ---@field epoch number @ number of microseconds since the UNIX epoch.
 ---@field position number @ sort order for messages at the same time
 local ClubMessageIdentifier = {}
+
+---@class ClubMessageRange
+---@field oldestMessageId ClubMessageIdentifier 
+---@field newestMessageId ClubMessageIdentifier 
+local ClubMessageRange = {}
 
 ---@class ClubMessageInfo
 ---@field messageId ClubMessageIdentifier 
@@ -613,11 +601,6 @@ local ClubMessageIdentifier = {}
 ---@field destroyed bool 
 ---@field edited bool 
 local ClubMessageInfo = {}
-
----@class ClubMessageRange
----@field oldestMessageId ClubMessageIdentifier 
----@field newestMessageId ClubMessageIdentifier 
-local ClubMessageRange = {}
 
 ---@class ClubPrivilegeInfo
 ---@field canDestroy bool 
@@ -663,13 +646,6 @@ local ClubMessageRange = {}
 ---@field canPinMessage bool 
 ---@field kickableRoleIds table @ Roles that can be kicked and banned
 local ClubPrivilegeInfo = {}
-
----@class ClubSelfInvitationInfo
----@field invitationId string 
----@field club ClubInfo 
----@field inviter ClubMemberInfo 
----@field leaders table 
-local ClubSelfInvitationInfo = {}
 
 ---@class ClubStreamInfo
 ---@field streamId string 

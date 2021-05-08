@@ -1,10 +1,6 @@
 ---@class PlayerLocationInfo
 C_PlayerInfo = {}
 
----@param guid string 
----@return boolean isPlayer
-function C_PlayerInfo.GUIDIsPlayer(guid) end
-
 ---@param playerLocation table 
 ---@return string|nil, string|nil, number|nil className, classFilename, classID
 function C_PlayerInfo.GetClass(playerLocation) end
@@ -25,8 +21,4 @@ function C_PlayerInfo.GetSex(playerLocation) end
 ---@overload fun()
 ---@return boolean|nil isConnected
 function C_PlayerInfo.IsConnected(playerLocation) end
-
----@param playerLocation table 
----@return boolean unitIsSameServer
-function C_PlayerInfo.UnitIsSameServer(playerLocation) end
 

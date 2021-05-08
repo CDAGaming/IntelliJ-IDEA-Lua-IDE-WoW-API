@@ -35,16 +35,9 @@ function C_ModelInfo.GetModelSceneCameraInfoByID(modelSceneCameraID) end
 ---@return ModelSceneType, number, number modelSceneType, modelCameraIDs, modelActorsIDs
 function C_ModelInfo.GetModelSceneInfoByID(modelSceneID) end
 
----@class ItemTryOnReason
-local ItemTryOnReason = {}
-ItemTryOnReason.Success = 0
-ItemTryOnReason.WrongRace = 1
-ItemTryOnReason.NotEquippable = 2
-ItemTryOnReason.DataPending = 3
-
 ---@class ModelSceneSetting
 local ModelSceneSetting = {}
-ModelSceneSetting.AlignLightToOrbitDelta = 1
+ModelSceneSetting.AlignLightToOrbitDelta = 0
 
 ---@class ModelSceneType
 local ModelSceneType = {}
@@ -58,16 +51,12 @@ ModelSceneType.ArtifactTier2ForgingScene = 6
 ModelSceneType.ArtifactTier2SlamEffect = 7
 ModelSceneType.CommentatorVictoryFanfare = 8
 ModelSceneType.ArtifactRelicTalentEffect = 9
-ModelSceneType.PvPWarModeOrb = 10
-ModelSceneType.PvPWarModeFire = 11
+ModelSceneType.PvpWarModeOrb = 10
+ModelSceneType.PvpWarModeFire = 11
 ModelSceneType.PartyPose = 12
 ModelSceneType.AzeriteItemLevelUpToast = 13
 ModelSceneType.AzeritePowers = 14
 ModelSceneType.AzeriteRewardGlow = 15
-ModelSceneType.HeartOfAzeroth = 16
-ModelSceneType.WorldMapThreat = 17
-ModelSceneType.Soulbinds = 18
-ModelSceneType.JailersTowerAnimaGlow = 19
 
 ---@class UIModelSceneActorDisplayInfo
 ---@field animation number 

@@ -1,14 +1,6 @@
 ---@class Item
 C_Item = {}
 
----@param itemLoc table 
----@return boolean canBeScrapped
-function C_Item.CanScrapItem(itemLoc) end
-
----@param itemLoc table 
----@return boolean isItemViewable
-function C_Item.CanViewItemPowers(itemLoc) end
-
 ---@param emptiableItemLocation table 
 ---@return boolean itemExists
 function C_Item.DoesItemExist(emptiableItemLocation) end
@@ -16,10 +8,6 @@ function C_Item.DoesItemExist(emptiableItemLocation) end
 ---@param itemInfo string 
 ---@return boolean itemExists
 function C_Item.DoesItemExistByID(itemInfo) end
-
----@param itemLoc table 
----@return boolean matchesBonusTree
-function C_Item.DoesItemMatchBonusTreeReplacement(itemLoc) end
 
 ---@param itemLocation table 
 ---@return number|nil currentItemLevel
@@ -70,32 +58,8 @@ function C_Item.GetItemQuality(itemLocation) end
 function C_Item.GetItemQualityByID(itemInfo) end
 
 ---@param itemLocation table 
----@return number stackCount
-function C_Item.GetStackCount(itemLocation) end
-
----@param itemInfo string 
----@return boolean isAnimaItem
-function C_Item.IsAnimaItemByID(itemInfo) end
-
----@param itemLocation table 
 ---@return boolean isBound
 function C_Item.IsBound(itemLocation) end
-
----@param itemLoc table 
----@return boolean isConduit
-function C_Item.IsItemConduit(itemLoc) end
-
----@param itemLoc table 
----@return boolean isCorrupted
-function C_Item.IsItemCorrupted(itemLoc) end
-
----@param itemLoc table 
----@return boolean isCorruptionRelated
-function C_Item.IsItemCorruptionRelated(itemLoc) end
-
----@param itemLoc table 
----@return boolean isCorruptionResistant
-function C_Item.IsItemCorruptionResistant(itemLoc) end
 
 ---@param itemLocation table 
 ---@return boolean isCached
@@ -105,19 +69,12 @@ function C_Item.IsItemDataCached(itemLocation) end
 ---@return boolean isCached
 function C_Item.IsItemDataCachedByID(itemInfo) end
 
----@param itemInfo string 
----@return boolean isKeystone
-function C_Item.IsItemKeystoneByID(itemInfo) end
-
 ---@param itemLocation table 
 ---@return boolean isLocked
 function C_Item.IsLocked(itemLocation) end
 
 ---@param itemLocation table 
 function C_Item.LockItem(itemLocation) end
-
----@param itemGUID string 
-function C_Item.LockItemByGUID(itemGUID) end
 
 ---@param itemLocation table 
 function C_Item.RequestLoadItemData(itemLocation) end
@@ -128,6 +85,47 @@ function C_Item.RequestLoadItemDataByID(itemInfo) end
 ---@param itemLocation table 
 function C_Item.UnlockItem(itemLocation) end
 
----@param itemGUID string 
-function C_Item.UnlockItemByGUID(itemGUID) end
+---@class InventoryType
+local InventoryType = {}
+InventoryType.IndexNonEquipType = 0
+InventoryType.IndexHeadType = 1
+InventoryType.IndexNeckType = 2
+InventoryType.IndexShoulderType = 3
+InventoryType.IndexBodyType = 4
+InventoryType.IndexChestType = 5
+InventoryType.IndexWaistType = 6
+InventoryType.IndexLegsType = 7
+InventoryType.IndexFeetType = 8
+InventoryType.IndexWristType = 9
+InventoryType.IndexHandType = 10
+InventoryType.IndexFingerType = 11
+InventoryType.IndexTrinketType = 12
+InventoryType.IndexWeaponType = 13
+InventoryType.IndexShieldType = 14
+InventoryType.IndexRangedType = 15
+InventoryType.IndexCloakType = 16
+InventoryType.Index2HweaponType = 17
+InventoryType.IndexBagType = 18
+InventoryType.IndexTabardType = 19
+InventoryType.IndexRobeType = 20
+InventoryType.IndexWeaponmainhandType = 21
+InventoryType.IndexWeaponoffhandType = 22
+InventoryType.IndexHoldableType = 23
+InventoryType.IndexAmmoType = 24
+InventoryType.IndexThrownType = 25
+InventoryType.IndexRangedrightType = 26
+InventoryType.IndexQuiverType = 27
+InventoryType.IndexRelicType = 28
+
+---@class ItemQuality
+local ItemQuality = {}
+ItemQuality.Poor = 0
+ItemQuality.Standard = 1
+ItemQuality.Good = 2
+ItemQuality.Superior = 3
+ItemQuality.Epic = 4
+ItemQuality.Legendary = 5
+ItemQuality.Artifact = 6
+ItemQuality.Heirloom = 7
+ItemQuality.WoWToken = 8
 

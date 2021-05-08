@@ -5,6 +5,9 @@ C_StorePublic = {}
 ---@return boolean hasPurchaseableProducts
 function C_StorePublic.DoesGroupHavePurchaseableProducts(groupID) end
 
+---@return boolean hasPurchaseableProducts
+function C_StorePublic.HasPurchaseableProducts() end
+
 ---@return boolean disabled
 function C_StorePublic.IsDisabledByParentalControls() end
 
