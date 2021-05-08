@@ -37,7 +37,7 @@ function C_ModelInfo.GetModelSceneInfoByID(modelSceneID) end
 
 ---@class ModelSceneSetting
 local ModelSceneSetting = {}
-ModelSceneSetting.AlignLightToOrbitDelta = 0
+ModelSceneSetting.AlignLightToOrbitDelta = 1
 
 ---@class ModelSceneType
 local ModelSceneType = {}
@@ -51,8 +51,8 @@ ModelSceneType.ArtifactTier2ForgingScene = 6
 ModelSceneType.ArtifactTier2SlamEffect = 7
 ModelSceneType.CommentatorVictoryFanfare = 8
 ModelSceneType.ArtifactRelicTalentEffect = 9
-ModelSceneType.PvpWarModeOrb = 10
-ModelSceneType.PvpWarModeFire = 11
+ModelSceneType.PvPWarModeOrb = 10
+ModelSceneType.PvPWarModeFire = 11
 ModelSceneType.PartyPose = 12
 ModelSceneType.AzeriteItemLevelUpToast = 13
 ModelSceneType.AzeritePowers = 14

@@ -1,9 +1,10 @@
 ---@class TaxiMap
 C_TaxiMap = {}
 
---- Returns information on taxi nodes at the given flight master.
+--- Returns information on taxi nodes at the current flight master.
+---@param uiMapID number 
 ---@return TaxiNodeInfo taxiNodes
-function C_TaxiMap.GetAllTaxiNodes() end
+function C_TaxiMap.GetAllTaxiNodes(uiMapID) end
 
 --- Returns information on taxi nodes for a given map, without considering the current flight master.
 ---@param uiMapID number 
@@ -22,15 +23,6 @@ FlightPathState.Current = 0
 FlightPathState.Reachable = 1
 FlightPathState.Unreachable = 2
 
----@class TaxiNodeInfo
----@field nodeID number 
----@field position table 
----@field name string 
----@field state FlightPathState 
----@field slotIndex number 
----@field textureKitPrefix string|nil 
-local TaxiNodeInfo = {}
-
 ---@class MapTaxiNodeInfo
 ---@field nodeID number 
 ---@field position table 
@@ -39,4 +31,13 @@ local TaxiNodeInfo = {}
 ---@field faction FlightPathFaction 
 ---@field textureKitPrefix string|nil 
 local MapTaxiNodeInfo = {}
+
+---@class TaxiNodeInfo
+---@field nodeID number 
+---@field position table 
+---@field name string 
+---@field state FlightPathState 
+---@field slotIndex number 
+---@field textureKitPrefix string|nil 
+local TaxiNodeInfo = {}
 

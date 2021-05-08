@@ -113,7 +113,6 @@ function C_FriendList.SortWho(sorting) end
 ---@field level number 
 ---@field dnd bool 
 ---@field afk bool 
----@field referAFriend bool 
 local FriendInfo = {}
 
 ---@class WhoInfo

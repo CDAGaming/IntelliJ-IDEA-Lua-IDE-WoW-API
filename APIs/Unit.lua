@@ -6,6 +6,11 @@ function SetPortraitTexture(textureObject, unitToken) end
 ---@param creatureDisplayID number 
 function SetPortraitTextureFromCreatureDisplayID(textureObject, creatureDisplayID) end
 
+--- Whether the player would have been able to know the unit's exact health value in the original game release.
+---@param unit string 
+---@return boolean shouldKnowUnitHealth
+function ShouldKnowUnitHealth(unit) end
+
 ---@param unit string 
 ---@return string, string, number className, classFilename, classID
 function UnitClass(unit) end

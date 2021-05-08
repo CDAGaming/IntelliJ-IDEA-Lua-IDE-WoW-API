@@ -33,6 +33,16 @@ function C_ActionBar.IsAutoCastPetAction(slotID) end
 ---@return boolean isEnabledAutoCastPetAction
 function C_ActionBar.IsEnabledAutoCastPetAction(slotID) end
 
+---@param actionID number 
+---@param useNeutral boolean 
+---@return boolean isHarmful
+function C_ActionBar.IsHarmfulAction(actionID, useNeutral) end
+
+---@param actionID number 
+---@param useNeutral boolean 
+---@return boolean isHelpful
+function C_ActionBar.IsHelpfulAction(actionID, useNeutral) end
+
 ---@param spellID number 
 ---@return boolean isOnBarOrSpecialBar
 function C_ActionBar.IsOnBarOrSpecialBar(spellID) end

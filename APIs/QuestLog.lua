@@ -22,13 +22,17 @@ function C_QuestLog.GetQuestObjectives(questID) end
 function C_QuestLog.IsOnQuest(questID) end
 
 ---@param questID number 
+---@return boolean isCompleted
+function C_QuestLog.IsQuestFlaggedCompleted(questID) end
+
+---@param questID number 
 ---@return boolean shouldShow
 function C_QuestLog.ShouldShowQuestRewards(questID) end
 
 ---@class QuestTag
 local QuestTag = {}
 QuestTag.Group = 1
-QuestTag.Pvp = 41
+QuestTag.PvP = 41
 QuestTag.Raid = 62
 QuestTag.Dungeon = 81
 QuestTag.Legendary = 83

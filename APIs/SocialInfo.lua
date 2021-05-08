@@ -1,3 +1,3 @@
 ---@class SocialInfo
-C_SocialInfo = {}
+C_Social = {}
 

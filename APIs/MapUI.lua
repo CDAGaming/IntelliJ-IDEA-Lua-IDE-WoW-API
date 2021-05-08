@@ -124,6 +124,28 @@ MapCanvasPosition.BottomRight = 2
 MapCanvasPosition.TopLeft = 3
 MapCanvasPosition.TopRight = 4
 
+---@class UIMapFlag
+local UIMapFlag = {}
+UIMapFlag.NoHighlight = 1
+UIMapFlag.ShowOverlays = 2
+UIMapFlag.ShowTaxiNodes = 4
+UIMapFlag.GarrisonMap = 8
+UIMapFlag.FallbackToParentMap = 16
+UIMapFlag.NoHighlightTexture = 32
+UIMapFlag.ShowTaskObjectives = 64
+UIMapFlag.NoWorldPositions = 128
+UIMapFlag.HideArchaeologyDigs = 256
+UIMapFlag.Deprecated = 512
+UIMapFlag.HideIcons = 1024
+UIMapFlag.HideVignettes = 2048
+UIMapFlag.ForceAllOverlayExplored = 4096
+
+---@class UIMapSystem
+local UIMapSystem = {}
+UIMapSystem.World = 0
+UIMapSystem.Taxi = 1
+UIMapSystem.Adventure = 2
+
 ---@class UIMapType
 local UIMapType = {}
 UIMapType.Cosmic = 0
@@ -134,27 +156,19 @@ UIMapType.Dungeon = 4
 UIMapType.Micro = 5
 UIMapType.Orphan = 6
 
----@class UIMapSystem
-local UIMapSystem = {}
-UIMapSystem.World = 0
-UIMapSystem.Taxi = 1
-UIMapSystem.Adventure = 2
-
----@class UiMapLayerInfo
----@field layerWidth number 
----@field layerHeight number 
----@field tileWidth number 
----@field tileHeight number 
----@field minScale number 
----@field maxScale number 
----@field additionalZoomSteps number 
-local UiMapLayerInfo = {}
-
 ---@class MapBannerInfo
 ---@field areaPoiID number 
 ---@field name string 
 ---@field atlasName string 
 local MapBannerInfo = {}
+
+---@class MapLinkInfo
+---@field areaPoiID number 
+---@field position table 
+---@field name string 
+---@field atlasName string 
+---@field linkedUiMapID number 
+local MapLinkInfo = {}
 
 ---@class UiMapDetails
 ---@field mapID number 
@@ -169,11 +183,13 @@ local UiMapDetails = {}
 ---@field name string 
 local UiMapGroupMemberInfo = {}
 
----@class MapLinkInfo
----@field areaPoiID number 
----@field position table 
----@field name string 
----@field atlasName string 
----@field linkedUiMapID number 
-local MapLinkInfo = {}
+---@class UiMapLayerInfo
+---@field layerWidth number 
+---@field layerHeight number 
+---@field tileWidth number 
+---@field tileHeight number 
+---@field minScale number 
+---@field maxScale number 
+---@field additionalZoomSteps number 
+local UiMapLayerInfo = {}
 

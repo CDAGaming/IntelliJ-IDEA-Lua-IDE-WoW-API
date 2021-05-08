@@ -10,6 +10,7 @@ function C_AreaPoiInfo.GetAreaPOIForMap(uiMapID) end
 ---@return AreaPOIInfo poiInfo
 function C_AreaPoiInfo.GetAreaPOIInfo(uiMapID, areaPoiID) end
 
+--- Returns the number of minutes until the POI expires.
 ---@param areaPoiID number 
 ---@return number minutesLeft
 function C_AreaPoiInfo.GetAreaPOITimeLeft(areaPoiID) end
@@ -27,5 +28,6 @@ function C_AreaPoiInfo.IsAreaPOITimed(areaPoiID) end
 ---@field textureIndex number|nil 
 ---@field widgetSetID number|nil 
 ---@field atlasName string|nil 
+---@field shouldGlow bool 
 local AreaPOIInfo = {}
 

@@ -20,6 +20,7 @@ function GetExpansionLevel() end
 ---@return boolean, number|nil isExpansionTrialAccount, expansionTrialRemainingSeconds
 function GetExpansionTrialInfo() end
 
+--- Maps an expansion level to a maximum character level for that expansion.
 ---@param expansionLevel number 
 ---@return number maxLevel
 function GetMaxLevelForExpansionLevel(expansionLevel) end
@@ -33,6 +34,9 @@ function GetMinimumExpansionLevel() end
 ---@return number numExpansions
 function GetNumExpansions() end
 
+---@return number serverExpansionLevel
+function GetServerExpansionLevel() end
+
 ---@return boolean isExpansionTrialAccount
 function IsExpansionTrial() end
 
@@ -42,14 +46,14 @@ function IsTrialAccount() end
 ---@return boolean isVeteranTrialAccount
 function IsVeteranTrialAccount() end
 
----@class ExpansionDisplayInfoFeature
----@field icon number 
----@field text string 
-local ExpansionDisplayInfoFeature = {}
-
 ---@class ExpansionDisplayInfo
 ---@field logo number 
 ---@field banner string 
 ---@field features table 
 local ExpansionDisplayInfo = {}
+
+---@class ExpansionDisplayInfoFeature
+---@field icon number 
+---@field text string 
+local ExpansionDisplayInfoFeature = {}
 

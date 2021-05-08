@@ -63,10 +63,12 @@ function C_UIWidgetManager.GetTextureWithStateVisualizationInfo(widgetID) end
 ---@return number setID
 function C_UIWidgetManager.GetTopCenterWidgetSetID() end
 
----@class WidgetShownState
-local WidgetShownState = {}
-WidgetShownState.Hidden = 0
-WidgetShownState.Shown = 1
+---@class IconAndTextWidgetState
+local IconAndTextWidgetState = {}
+IconAndTextWidgetState.Hidden = 0
+IconAndTextWidgetState.Shown = 1
+IconAndTextWidgetState.ShownWithDynamicIconFlashing = 2
+IconAndTextWidgetState.ShownWithDynamicIconNotFlashing = 3
 
 ---@class WidgetEnabledState
 local WidgetEnabledState = {}
@@ -75,28 +77,10 @@ WidgetEnabledState.Enabled = 1
 WidgetEnabledState.Red = 2
 WidgetEnabledState.Highlight = 3
 
----@class UIWidgetVisualizationType
-local UIWidgetVisualizationType = {}
-UIWidgetVisualizationType.IconAndText = 0
-UIWidgetVisualizationType.CaptureBar = 1
-UIWidgetVisualizationType.StatusBar = 2
-UIWidgetVisualizationType.DoubleStatusBar = 3
-UIWidgetVisualizationType.IconTextAndBackground = 4
-UIWidgetVisualizationType.DoubleIconAndText = 5
-UIWidgetVisualizationType.StackedResourceTracker = 6
-UIWidgetVisualizationType.IconTextAndCurrencies = 7
-UIWidgetVisualizationType.TextWithState = 8
-UIWidgetVisualizationType.HorizontalCurrencies = 9
-UIWidgetVisualizationType.BulletTextList = 10
-UIWidgetVisualizationType.ScenarioHeaderCurrenciesAndBackground = 11
-UIWidgetVisualizationType.TextureWithState = 12
-
----@class IconAndTextWidgetState
-local IconAndTextWidgetState = {}
-IconAndTextWidgetState.Hidden = 0
-IconAndTextWidgetState.Shown = 1
-IconAndTextWidgetState.ShownWithDynamicIconFlashing = 2
-IconAndTextWidgetState.ShownWithDynamicIconNotFlashing = 3
+---@class WidgetShownState
+local WidgetShownState = {}
+WidgetShownState.Hidden = 0
+WidgetShownState.Shown = 1
 
 ---@class BulletTextListWidgetVisualizationInfo
 ---@field shownState WidgetShownState 
@@ -140,20 +124,6 @@ local DoubleIconAndTextWidgetVisualizationInfo = {}
 ---@field orderIndex number 
 ---@field widgetTag string 
 local DoubleStatusBarWidgetVisualizationInfo = {}
-
----@class UIWidgetInfo
----@field widgetID number 
----@field widgetSetID number 
----@field widgetType UIWidgetVisualizationType 
-local UIWidgetInfo = {}
-
----@class UIWidgetCurrencyInfo
----@field iconFileID number 
----@field leadingText string 
----@field text string 
----@field tooltip string 
----@field isCurrencyMaxed bool 
-local UIWidgetCurrencyInfo = {}
 
 ---@class HorizontalCurrenciesWidgetVisualizationInfo
 ---@field shownState WidgetShownState 
@@ -241,4 +211,18 @@ local TextWithStateWidgetVisualizationInfo = {}
 ---@field orderIndex number 
 ---@field widgetTag string 
 local TextureWithStateVisualizationInfo = {}
+
+---@class UIWidgetCurrencyInfo
+---@field iconFileID number 
+---@field leadingText string 
+---@field text string 
+---@field tooltip string 
+---@field isCurrencyMaxed bool 
+local UIWidgetCurrencyInfo = {}
+
+---@class UIWidgetInfo
+---@field widgetID number 
+---@field widgetSetID number 
+---@field widgetType UIWidgetVisualizationType 
+local UIWidgetInfo = {}
 
