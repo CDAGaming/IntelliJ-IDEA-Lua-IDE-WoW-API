@@ -53,6 +53,10 @@ function C_ChallengeMode.GetPowerLevelDamageHealthMod(powerLevel) end
 ---@return number, number, number mapChallengeModeID, affixIDs, keystoneLevel
 function C_ChallengeMode.GetSlottedKeystoneInfo() end
 
+---@param level number 
+---@return table levelScore
+function C_ChallengeMode.GetSpecificDungeonScoreRarityColor(level) end
+
 ---@return boolean hasSlottedKeystone
 function C_ChallengeMode.HasSlottedKeystone() end
 

@@ -272,6 +272,6 @@ local TransmogCategoryAppearanceInfo = {}
 ---@field icon number 
 ---@field isCollected bool 
 ---@field isUsable bool 
----@field isHiddenVisual bool 
+---@field isHideVisual bool 
 local TransmogIllusionInfo = {}
 

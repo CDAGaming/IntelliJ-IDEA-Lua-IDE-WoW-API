@@ -96,5 +96,6 @@ local MythicPlusMember = {}
 ---@field level number 
 ---@field thisWeek bool 
 ---@field completed bool 
+---@field runScore number 
 local MythicPlusRunInfo = {}
 

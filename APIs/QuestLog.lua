@@ -400,5 +400,6 @@ local QuestTagInfo = {}
 ---@field background string 
 ---@field seal string 
 ---@field signature string 
+---@field poiIcon string 
 local QuestTheme = {}
 

@@ -170,6 +170,7 @@ local AutoCombatResult = {}
 ---@field previewMask number 
 ---@field icon number 
 ---@field spellTutorialFlag number 
+---@field hasThornsEffect bool 
 local AutoCombatSpellInfo = {}
 
 ---@class AutoCombatTroopInfo

@@ -62,6 +62,8 @@ function C_LFGList.SetSearchToQuestID(questID) end
 ---@class BestDungeonScoreMapInfo
 ---@field mapScore number 
 ---@field mapName string 
+---@field bestRunLevel number 
+---@field finishedSuccess bool 
 local BestDungeonScoreMapInfo = {}
 
 ---@class LfgApplicantData
@@ -106,6 +108,7 @@ local LfgEntryData = {}
 ---@field age number 
 ---@field questID number|nil 
 ---@field leaderOverallDungeonScore number|nil 
+---@field leaderDungeonScoreInfo BestDungeonScoreMapInfo|nil 
 local LfgSearchResultData = {}
 
 ---@class WowLocale

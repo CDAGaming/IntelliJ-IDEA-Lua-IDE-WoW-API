@@ -6,7 +6,8 @@ function C_BarberShop.ApplyCustomizationChoices() end
 
 function C_BarberShop.Cancel() end
 
-function C_BarberShop.ClearPreviewChoices() end
+---@param clearSavedChoices boolean 
+function C_BarberShop.ClearPreviewChoices(clearSavedChoices) end
 
 ---@return CharCustomizationCategory categories
 function C_BarberShop.GetAvailableCustomizations() end
