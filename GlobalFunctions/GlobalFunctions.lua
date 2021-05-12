@@ -1632,8 +1632,8 @@ end
 --- [https://wowpedia.fandom.com/wiki/API_CreateFrame]
 --- @param frameType string @ Type of the frame e.g. Frame or Button.
 --- @param name string @ ? - Globally accessible name to assign to the frame, or nil for an anonymous frame.
---- @param parent Frame @ ? - Parent object to assign to the frame, or nil to be parentless; cannot be a string. Can also be set with Frame:SetParent()
---- @param template string @ ? - Comma-delimited list of virtual frames to inherit from.
+--- @param parent Frame @ ? - Parent object to assign to the frame, or nil to be parentless; cannot be a string. Can also be set with Region:SetParent()
+--- @param template string @ ? - Comma-delimited list of virtual frames to inherit from. See also the Complete List of FrameXML templates.
 --- @param id number @ ? - ID to assign to the frame. Can also be set with Frame:SetID()
 --- @return Frame @ frame
 function CreateFrame(frameType, name, parent, template, id)
@@ -13745,7 +13745,7 @@ end
 function abs(num)
 end
 
---- [https://wowpedia.fandom.com/wiki/API_acos?action=edit&amp;redlink=1]
+--- [https://wowpedia.fandom.com/wiki/API_acos]
 --- @return void
 function acos()
 end
@@ -13755,7 +13755,7 @@ end
 function addframetext()
 end
 
---- [https://wowpedia.fandom.com/wiki/API_asin?action=edit&amp;redlink=1]
+--- [https://wowpedia.fandom.com/wiki/API_asin]
 --- @return void
 function asin()
 end
@@ -13765,7 +13765,7 @@ end
 function assert()
 end
 
---- [https://wowpedia.fandom.com/wiki/API_atan?action=edit&amp;redlink=1]
+--- [https://wowpedia.fandom.com/wiki/API_atan]
 --- @return void
 function atan()
 end
@@ -13860,7 +13860,7 @@ end
 function coroutine.yield()
 end
 
---- [https://wowpedia.fandom.com/wiki/API_cos?action=edit&amp;redlink=1]
+--- [https://wowpedia.fandom.com/wiki/API_cos]
 --- @return void
 function cos()
 end
@@ -14320,9 +14320,11 @@ end
 function setmetatable()
 end
 
---- [https://wowpedia.fandom.com/wiki/API_sin?action=edit&amp;redlink=1]
---- @return void
-function sin()
+--- Computes trigonometric functions.
+--- [https://wowpedia.fandom.com/wiki/API_sin]
+--- @param sine unknown
+--- @return number @ radians
+function sin(sine)
 end
 
 --- Sort the array portion of a table in-place (i.e. alter the table).
@@ -14605,7 +14607,7 @@ end
 function table.wipe()
 end
 
---- [https://wowpedia.fandom.com/wiki/API_tan?action=edit&amp;redlink=1]
+--- [https://wowpedia.fandom.com/wiki/API_tan]
 --- @return void
 function tan()
 end
