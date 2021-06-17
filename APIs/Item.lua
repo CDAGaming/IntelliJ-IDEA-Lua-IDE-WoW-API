@@ -93,6 +93,10 @@ function C_Item.IsAnimaItemByID(itemInfo) end
 ---@return boolean isBound
 function C_Item.IsBound(itemLocation) end
 
+---@param itemInfo string 
+---@return boolean isDressableItem
+function C_Item.IsDressableItemByID(itemInfo) end
+
 ---@param itemLoc table 
 ---@return boolean isConduit
 function C_Item.IsItemConduit(itemLoc) end

@@ -28,6 +28,7 @@ JailersTowerType.TormentChamberThrall = 9
 JailersTowerType.TormentChamberAnduin = 10
 JailersTowerType.AdamantVaults = 11
 JailersTowerType.ForgottenCatacombs = 12
+JailersTowerType.Ossuary = 13
 
 ---@class ScenarioInformation
 ---@field name string 

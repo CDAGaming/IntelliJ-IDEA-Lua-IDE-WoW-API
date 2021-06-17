@@ -61,5 +61,13 @@ EventToastEventType.SpellScript = 18
 ---@field time number|nil 
 ---@field uiWidgetSetID number|nil 
 ---@field extraUiWidgetSetID number|nil 
+---@field titleTooltip string|nil 
+---@field subtitleTooltip string|nil 
+---@field titleTooltipUiWidgetSetID number|nil 
+---@field subtitleTooltipUiWidgetSetID number|nil 
+---@field hideDefaultAtlas bool|nil 
+---@field showSoundKitID number|nil 
+---@field hideSoundKitID number|nil 
+---@field colorTint table|nil 
 local EventToastInfo = {}
 

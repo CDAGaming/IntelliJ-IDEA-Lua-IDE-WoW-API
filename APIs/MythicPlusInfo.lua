@@ -29,6 +29,7 @@ function C_MythicPlus.GetRewardLevelFromKeystoneLevel(keystoneLevel) end
 ---@return MythicPlusRunInfo runs
 function C_MythicPlus.GetRunHistory(includePreviousWeeks, includeIncompleteRuns) end
 
+--- Gets the active players best runs by the seasonal tracked affixes as well as their overall score for the current season.
 ---@param mapChallengeModeID number 
 ---@return MythicPlusAffixScoreInfo, number affixScores, bestOverAllScore
 function C_MythicPlus.GetSeasonBestAffixScoreInfoForMap(mapChallengeModeID) end
@@ -38,7 +39,7 @@ function C_MythicPlus.GetSeasonBestAffixScoreInfoForMap(mapChallengeModeID) end
 function C_MythicPlus.GetSeasonBestForMap(mapChallengeModeID) end
 
 ---@param mapChallengeModeID number 
----@return number, number, MythicPlusDate, number, MythicPlusMember durationSec, level, completionDate, affixIDs, members
+---@return number, number, MythicPlusDate, number, MythicPlusMember, number durationSec, level, completionDate, affixIDs, members, dungeonScore
 function C_MythicPlus.GetWeeklyBestForMap(mapChallengeModeID) end
 
 ---@return number, number, number, number currentWeekBestLevel, weeklyRewardLevel, nextDifficultyWeeklyRewardLevel, nextBestLevel
@@ -62,6 +63,7 @@ function C_MythicPlus.RequestRewards() end
 ---@field completionDate MythicPlusDate 
 ---@field affixIDs table 
 ---@field members table 
+---@field dungeonScore number 
 local MapSeasonBestInfo = {}
 
 ---@class MythicPlusAffixScoreInfo

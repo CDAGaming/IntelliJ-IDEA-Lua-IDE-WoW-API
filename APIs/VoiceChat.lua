@@ -109,7 +109,10 @@ function C_VoiceChat.GetProcesses() end
 ---@return string|nil keys
 function C_VoiceChat.GetPushToTalkBinding() end
 
----@return VoiceTtsVoiceType|nil ttsVoices
+---@return VoiceTtsVoiceType ttsVoices
+function C_VoiceChat.GetRemoteTtsVoices() end
+
+---@return VoiceTtsVoiceType ttsVoices
 function C_VoiceChat.GetTtsVoices() end
 
 ---@return number|nil sensitivity
@@ -166,6 +169,12 @@ function C_VoiceChat.IsPlayerUsingVoice(playerLocation) end
 
 ---@return boolean|nil isSilenced
 function C_VoiceChat.IsSilenced() end
+
+---@return boolean isActive
+function C_VoiceChat.IsSpeakForMeActive() end
+
+---@return boolean isAllowed
+function C_VoiceChat.IsSpeakForMeAllowed() end
 
 ---@param channelID number 
 function C_VoiceChat.LeaveChannel(channelID) end
@@ -236,12 +245,17 @@ function C_VoiceChat.SetVADSensitivity(sensitivity) end
 ---@return boolean shouldDiscoverChannels
 function C_VoiceChat.ShouldDiscoverChannels() end
 
+---@param text string 
+function C_VoiceChat.SpeakRemoteTextSample(text) end
+
 ---@param voiceID number 
 ---@param text string 
 ---@param destination VoiceTtsDestination 
 ---@param rate number 
 ---@param volume number 
 function C_VoiceChat.SpeakText(voiceID, text, destination, rate, volume) end
+
+function C_VoiceChat.StopSpeakingText() end
 
 function C_VoiceChat.ToggleDeafened() end
 
